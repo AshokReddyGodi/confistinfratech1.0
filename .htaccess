@@ -1,0 +1,12 @@
+Options +FollowSymlinks
+RewriteEngine On
+RewriteRule ^404 404.php
+RewriteCond %{SCRIPT_FILENAME} !-d
+RewriteCond %{SCRIPT_FILENAME} !-f#
+RewriteRule ^about-us?$ about.php [QSA]
+RewriteRule ^contact-us?$ contact.php [QSA]
+rewritecond %{http_host} ^http://confistinfratech.com [nc]
+rewriterule ^(.*)$ http://www.confistinfratech.com/$1 [r=301,nc]
+
+#php_flag display_startup_errors on
+#php_flag display_errors on
